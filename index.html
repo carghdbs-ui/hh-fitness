@@ -2,40 +2,41 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HH FITNESS | 식단관리</title>
-<meta property="og:title" content="김홍혁 트레이너 식단·운동 관리 앱">
-<meta property="og:description" content="김홍혁 트레이너가 직접 관리해주는 AI 식단 분석 & 운동일지 앱">
-<meta property="og:image" content="https://carghdbs-ui.github.io/hh-fitness/hh-thumbnail.jpg">
-<meta property="og:url" content="https://carghdbs-ui.github.io/hh-fitness">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>권시환 PT | 식단관리</title>
+
+<!-- PWA 설정 -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="권시환 PT">
+<meta name="application-name" content="권시환 PT">
+<meta name="theme-color" content="#07090f">
+<link rel="apple-touch-icon" href="https://carghdbs-ui.github.io/sh-fitness/sh-thumbnail.jpg">
+<link rel="manifest" href="/sh-fitness/manifest.json">
+<meta property="og:title" content="권시환 트레이너 식단·운동 관리 앱">
+<meta property="og:description" content="권시환 트레이너가 직접 관리해주는 AI 식단 분석 & 운동일지 앱">
+<meta property="og:image" content="https://carghdbs-ui.github.io/sh-fitness/sh-thumbnail.jpg">
+<meta property="og:url" content="https://project-75ovy.vercel.app">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://carghdbs-ui.github.io/hh-fitness/hh-thumbnail.jpg">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8TS89K8224"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8TS89K8224');
-</script>
+<meta name="twitter:image" content="https://carghdbs-ui.github.io/sh-fitness/sh-thumbnail.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
 :root {
-  --black: #0a0a0a;
-  --white: #f5f3ee;
-  --blue: #2d6a4f;
-  --blue-light: #52b788;
-  --blue-pale: #d8f3dc;
-  --accent: #ff6b35;
-  --gray1: #1c1c1c;
-  --gray2: #2e2e2e;
-  --gray3: #888;
-  --gray4: #bbb;
-  --card-bg: #161616;
-  --border: rgba(255,255,255,0.08);
+  --black: #07090f;
+  --white: #eef2f7;
+  --blue: #1a4a8a;
+  --blue-light: #4a90d9;
+  --blue-pale: #d0e8ff;
+  --accent: #ff9500;
+  --gray1: #141820;
+  --gray2: #1e2535;
+  --gray3: #6b7a99;
+  --gray4: #9aabcc;
+  --card-bg: #10141e;
+  --border: rgba(74,144,217,0.12);
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',sans-serif; min-height:100vh; padding-bottom:90px; }
@@ -49,7 +50,7 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 #splash.hide { opacity:0; visibility:hidden; pointer-events:none; }
 .splash-glow {
   position:absolute; width:400px; height:400px; border-radius:50%;
-  background:radial-gradient(circle, rgba(82,183,136,0.15) 0%, transparent 70%);
+  background:radial-gradient(circle, rgba(74,144,217,0.15) 0%, transparent 70%);
   top:50%; left:50%; transform:translate(-50%,-60%);
 }
 .splash-content { position:relative; z-index:2; text-align:center; }
@@ -57,7 +58,7 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 .splash-name { font-size:16px; color:rgba(255,255,255,.8); font-weight:500; letter-spacing:4px; margin-top:8px; }
 .splash-sub { font-size:11px; color:var(--gray3); letter-spacing:5px; margin-top:6px; }
 .splash-divider { width:48px; height:2px; background:var(--blue-light); margin:20px auto; }
-.splash-bar { width:100px; height:2px; background:rgba(82,183,136,.2); border-radius:2px; overflow:hidden; margin:0 auto; }
+.splash-bar { width:100px; height:2px; background:rgba(74,144,217,.2); border-radius:2px; overflow:hidden; margin:0 auto; }
 .splash-bar-fill { height:100%; width:0%; background:var(--blue-light); animation:load 1.8s ease forwards; }
 @keyframes load { to{width:100%;} }
 
@@ -86,7 +87,7 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 /* HEADER */
 .app-header {
   position:sticky; top:0; z-index:100;
-  background:rgba(10,10,10,.95); backdrop-filter:blur(16px);
+  background:rgba(7,9,15,.95); backdrop-filter:blur(16px);
   padding:14px 20px; border-bottom:1px solid var(--border);
   display:flex; align-items:center; justify-content:space-between;
 }
@@ -94,15 +95,15 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 .header-sub { font-size:10px; color:var(--gray3); letter-spacing:3px; }
 .role-badge { font-size:10px; font-weight:700; padding:3px 10px; border-radius:20px; letter-spacing:.05em; }
 .role-admin { background:rgba(255,149,0,.15); color:var(--accent); border:1px solid rgba(255,149,0,.3); }
-.role-trainer { background:rgba(255,255,255,0.08); color:var(--blue-light); border:1px solid rgba(82,183,136,.3); }
-.role-member { background:rgba(82,183,136,.08); color:var(--blue-pale); border:1px solid rgba(82,183,136,.2); }
+.role-trainer { background:rgba(74,144,217,.12); color:var(--blue-light); border:1px solid rgba(74,144,217,.3); }
+.role-member { background:rgba(74,144,217,.08); color:var(--blue-pale); border:1px solid rgba(74,144,217,.2); }
 .header-right { display:flex; align-items:center; gap:8px; }
 .logout-btn { background:none; border:1px solid var(--border); border-radius:8px; color:var(--gray3); padding:4px 10px; font-size:11px; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
 
 /* BOTTOM NAV */
 .bottom-nav {
   position:fixed; bottom:0; left:0; right:0; z-index:100;
-  background:rgba(10,10,10,.97); backdrop-filter:blur(16px);
+  background:rgba(7,9,15,.97); backdrop-filter:blur(16px);
   border-top:1px solid var(--border); display:flex; padding:8px 0 20px;
 }
 .nav-btn { flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; background:none; border:none; cursor:pointer; color:var(--gray3); font-family:'Noto Sans KR',sans-serif; font-size:10px; transition:color .2s; padding:6px 0; }
@@ -118,22 +119,22 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 .feed-header-bar { padding:20px 20px 8px; display:flex; align-items:center; justify-content:space-between; }
 .daily-summary {
   margin:0 20px 16px;
-  background:linear-gradient(135deg,var(--blue) 0%,#1a4a32 100%);
+  background:linear-gradient(135deg, #1a3a6a 0%, #0d1e3d 100%);
   border-radius:20px; padding:18px 20px;
   display:grid; grid-template-columns:repeat(4,1fr); gap:8px;
-  border:1px solid rgba(82,183,136,.2);
+  border:1px solid rgba(74,144,217,.2);
 }
 .ds-item { text-align:center; }
 .ds-val { font-size:18px; font-weight:700; }
 .ds-label { font-size:10px; color:rgba(255,255,255,.6); margin-top:2px; }
-.ds-kcal{color:#f9c74f;} .ds-prot{color:#90e0ef;} .ds-carb{color:#f8ad9d;} .ds-fat{color:#c77dff;}
+.ds-kcal{color:#f9c74f;} .ds-prot{color:#7ec8e3;} .ds-carb{color:#f8ad9d;} .ds-fat{color:#c77dff;}
 
 .upload-btn-card {
-  margin:0 20px 20px; border:2px dashed var(--blue); border-radius:20px; padding:24px;
+  margin:0 20px 20px; border:2px dashed rgba(74,144,217,.4); border-radius:20px; padding:24px;
   display:flex; flex-direction:column; align-items:center; gap:10px;
-  cursor:pointer; background:rgba(82,183,136,.04); transition:background .2s;
+  cursor:pointer; background:rgba(74,144,217,.04); transition:background .2s;
 }
-.upload-btn-card:hover { background:rgba(82,183,136,.1); }
+.upload-btn-card:hover { background:rgba(74,144,217,.1); }
 .upload-icon { font-size:36px; }
 .upload-label { font-size:14px; font-weight:500; color:var(--blue-light); }
 .upload-sub { font-size:12px; color:var(--gray3); }
@@ -151,11 +152,11 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 .macro-row { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-bottom:14px; }
 .macro-chip { border-radius:10px; padding:8px 6px; text-align:center; }
 .macro-chip.kcal{background:rgba(249,199,79,.1);border:1px solid rgba(249,199,79,.2);}
-.macro-chip.prot{background:rgba(144,224,239,.08);border:1px solid rgba(144,224,239,.2);}
+.macro-chip.prot{background:rgba(126,200,227,.08);border:1px solid rgba(126,200,227,.2);}
 .macro-chip.carb{background:rgba(248,173,157,.08);border:1px solid rgba(248,173,157,.2);}
 .macro-chip.fat{background:rgba(199,125,255,.08);border:1px solid rgba(199,125,255,.2);}
 .macro-num{font-size:15px;font-weight:700;}
-.macro-num.kcal{color:#f9c74f;} .macro-num.prot{color:#90e0ef;} .macro-num.carb{color:#f8ad9d;} .macro-num.fat{color:#c77dff;}
+.macro-num.kcal{color:#f9c74f;} .macro-num.prot{color:#7ec8e3;} .macro-num.carb{color:#f8ad9d;} .macro-num.fat{color:#c77dff;}
 .macro-unit{font-size:10px;color:var(--gray3);}
 
 /* COMMENTS */
@@ -197,7 +198,7 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 .modal-input:focus, .modal-select:focus { border-color:var(--blue-light); }
 .analyze-btn { width:100%; padding:16px; border-radius:14px; background:linear-gradient(135deg,var(--blue),var(--blue-light)); border:none; cursor:pointer; color:white; font-family:'Noto Sans KR',sans-serif; font-size:16px; font-weight:700; margin-top:8px; }
 .analyze-btn:disabled { opacity:.6; cursor:not-allowed; }
-.ai-result { background:var(--gray2); border-radius:14px; padding:16px; margin-top:12px; border:1px solid rgba(82,183,136,.3); display:none; }
+.ai-result { background:var(--gray2); border-radius:14px; padding:16px; margin-top:12px; border:1px solid rgba(74,144,217,.3); display:none; }
 .ai-result.show { display:block; }
 .ai-result-title { font-size:12px; color:var(--blue-light); font-weight:700; letter-spacing:.05em; margin-bottom:10px; }
 .ai-macro-row { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-bottom:10px; }
@@ -236,7 +237,7 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 .add-btn:hover { border-color:var(--blue-light); color:var(--blue-light); }
 
 /* PROFILE */
-.profile-hero { background:linear-gradient(160deg,var(--blue) 0%,var(--black) 60%); padding:60px 24px 32px; text-align:center; }
+.profile-hero { background:linear-gradient(160deg,#1a3a6a 0%,var(--black) 60%); padding:60px 24px 32px; text-align:center; }
 .profile-avatar { width:88px; height:88px; border-radius:50%; background:var(--blue-light); margin:0 auto 16px; display:flex; align-items:center; justify-content:center; font-size:36px; font-weight:900; color:white; border:3px solid rgba(255,255,255,.2); }
 .profile-name { font-size:22px; font-weight:700; }
 .profile-stats-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; padding:20px; }
@@ -266,7 +267,7 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 .shop-card-body { padding:16px; flex:1; }
 .shop-card-title { font-size:15px; font-weight:700; margin-bottom:4px; }
 .shop-card-desc { font-size:12px; color:var(--gray3); line-height:1.6; margin-bottom:10px; }
-.shop-card-tag { display:inline-block; background:rgba(255,255,255,0.08); color:var(--blue-light); font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; }
+.shop-card-tag { display:inline-block; background:rgba(74,144,217,.12); color:var(--blue-light); font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; }
 .shop-card-arrow { padding:16px 14px; display:flex; align-items:center; color:var(--accent); font-size:20px; }
 
 /* TOAST */
@@ -280,8 +281,8 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 <div id="splash">
   <div class="splash-glow"></div>
   <div class="splash-content">
-    <div class="splash-logo">HH FITNESS</div>
-    <div class="splash-name">김홍혁 트레이너</div>
+    <div class="splash-logo">권시환 PT</div>
+    <div class="splash-name">권시환 트레이너</div>
     <div class="splash-divider"></div>
     <div class="splash-sub">NUTRITION · COACHING · LIFESTYLE</div>
     <div class="splash-bar"><div class="splash-bar-fill"></div></div>
@@ -291,8 +292,8 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 <!-- LOGIN -->
 <div id="loginOverlay" class="open">
   <div class="login-box">
-    <div class="login-logo">HH FITNESS</div>
-    <div class="login-trainer">김홍혁 트레이너 식단관리</div>
+    <div class="login-logo">권시환 PT</div>
+    <div class="login-trainer">권시환 트레이너 식단관리</div>
     <div class="login-tabs">
       <div class="login-tab active" onclick="setLoginTab('member')">회원</div>
       <div class="login-tab" onclick="setLoginTab('trainer')">트레이너</div>
@@ -313,8 +314,8 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 <!-- HEADER -->
 <div class="app-header" id="appHeader" style="display:none">
   <div>
-    <div class="logo-text">HH FITNESS</div>
-    <div class="header-sub" id="headerSub">김홍혁 트레이너</div>
+    <div class="logo-text">권시환 PT</div>
+    <div class="header-sub" id="headerSub">권시환 트레이너</div>
   </div>
   <div class="header-right">
     <span class="role-badge" id="roleBadge"></span>
@@ -346,7 +347,7 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 <div class="screen" id="screen-shop">
   <div class="shop-header">
     <div class="shop-title">트레이너 추천</div>
-    <div class="shop-sub">김홍혁 트레이너가 직접 고른 제품들</div>
+    <div class="shop-sub">권시환 트레이너가 직접 고른 제품들</div>
   </div>
   <div class="shop-section-title">🔥 추천 식품</div>
   <div id="shopList"></div>
@@ -357,7 +358,7 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
   <div class="profile-hero">
     <div class="profile-avatar" id="profileAvatar">?</div>
     <div class="profile-name" id="profileName">회원 정보를 입력하세요</div>
-    <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:6px">김홍혁 트레이너의 회원</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:6px">권시환 트레이너의 회원</div>
   </div>
   <div class="profile-stats-row">
     <div class="stat-card"><div class="stat-val" id="statWeight">—</div><div class="stat-unit">kg</div><div class="stat-label">체중</div></div>
@@ -388,7 +389,7 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 <div class="screen" id="screen-admin">
   <div class="admin-section">
     <div class="admin-title">관리자 패널</div>
-    <div class="admin-sub">HH FITNESS 추천 제품 및 트레이너 관리</div>
+    <div class="admin-sub">권시환 PT 추천 제품 및 트레이너 관리</div>
     <div class="admin-card">
       <div class="admin-card-title">🛒 추천 제품 관리</div>
       <div id="adminProductList"></div>
@@ -539,7 +540,7 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
     <div id="trainerMemberList"></div>
   </div>
   <div id="trainerMemberDetailView" style="display:none">
-    <div style="padding:14px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);position:sticky;top:57px;background:rgba(10,10,10,.95);backdrop-filter:blur(16px);z-index:50">
+    <div style="padding:14px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);position:sticky;top:57px;background:rgba(7,9,15,.95);backdrop-filter:blur(16px);z-index:50">
       <button onclick="backToMemberList()" style="background:var(--gray2);border:1px solid var(--border);border-radius:10px;color:var(--white);padding:6px 14px;font-family:'Noto Sans KR',sans-serif;font-size:13px;cursor:pointer">← 목록</button>
       <div id="detailMemberName" style="font-size:16px;font-weight:700"></div>
     </div>
@@ -582,20 +583,20 @@ body { background:var(--black); color:var(--white); font-family:'Noto Sans KR',s
 
 <script>
 // ═══════════ 초기 설정 ═══════════
-const ADMIN_PW = 'hh2024admin'; // 관리자 비밀번호
+const ADMIN_PW = 'sh2024admin'; // 관리자 비밀번호
 
-let trainers = JSON.parse(localStorage.getItem('hh_trainers') || 'null') || [
-  { name:'김홍혁', code:'TRAINER001', color:'#4a90d9' },
+let trainers = JSON.parse(localStorage.getItem('sh_trainers') || 'null') || [
+  { name:'권시환', code:'SH001', color:'#4a90d9' },
 ];
 
-let products = JSON.parse(localStorage.getItem('hh_products') || 'null') || [
+let products = JSON.parse(localStorage.getItem('sh_products') || 'null') || [
   { emoji:'🍗', name:'닭가슴살 (냉동)', desc:'고단백 저지방 닭가슴살', tag:'단백질 보충', url:'https://naver.me/Gy3IvE1g' },
   { emoji:'🥤', name:'프로틴 쉐이크', desc:'운동 후 회복 필수템', tag:'회복 식품', url:'https://naver.me/Fhup8mQv' },
   { emoji:'🥗', name:'샐러드 정기배송', desc:'신선한 저칼로리 샐러드', tag:'다이어트', url:'https://naver.me/FvTiGV6Z' },
 ];
 
-let meals = JSON.parse(localStorage.getItem('hh_meals') || '[]');
-let profile = JSON.parse(localStorage.getItem('hh_profile') || '{}');
+let meals = JSON.parse(localStorage.getItem('sh_meals') || '[]');
+let profile = JSON.parse(localStorage.getItem('sh_profile') || '{}');
 let currentRole = null, currentUser = null;
 let currentPhotoDataURL = null, pendingAnalysis = null;
 let loginTabMode = 'member';
@@ -637,7 +638,7 @@ function doLogin() {
     if (!name) { err.textContent = '이름을 입력하세요'; return; }
     currentRole = 'member'; currentUser = { name };
     profile.name = name;
-    localStorage.setItem('hh_profile', JSON.stringify(profile));
+    localStorage.setItem('sh_profile', JSON.stringify(profile));
   }
   document.getElementById('loginOverlay').classList.remove('open');
   initApp();
@@ -724,7 +725,7 @@ function mealCardHTML(m, idx, arr) {
   const productHTML = products.slice(0,2).map(p=>`<a class="product-item" href="${p.url}" target="_blank" rel="noopener"><span class="product-emoji">${p.emoji}</span><div class="product-info"><div class="product-name">${p.name}</div><div class="product-desc">${p.desc}</div></div><span class="product-arrow">→</span></a>`).join('');
   const memberTag = (currentRole==='trainer'||currentRole==='admin') ? `<span class="meal-member-name">👤 ${m.memberName||'회원'}</span>` : '';
   const imgPart = m.photo ? `<div class="meal-img"><img src="${m.photo}" alt="식단"></div>` : `<div class="meal-img" style="height:70px;font-size:28px;display:flex;align-items:center;justify-content:center;background:#0d1020">🍽️</div>`;
-  return `<div class="meal-card">${imgPart}<div class="meal-body"><div class="meal-meta"><span class="meal-type-badge">${m.type}</span>${memberTag}<span class="meal-time">${timeStr}</span></div><div class="meal-name">${m.name||'식단 기록'}</div><div class="macro-row"><div class="macro-chip kcal"><div class="macro-num kcal">${Math.round(m.kcal)}</div><div class="macro-unit">kcal</div></div><div class="macro-chip prot"><div class="macro-num prot">${Math.round(m.prot)}g</div><div class="macro-unit">단백질</div></div><div class="macro-chip carb"><div class="macro-num carb">${Math.round(m.carb)}g</div><div class="macro-unit">탄수화물</div></div><div class="macro-chip fat"><div class="macro-num fat">${Math.round(m.fat)}g</div><div class="macro-unit">지방</div></div></div><div class="comments-area"><div id="comments_${realIdx}">${commentsHTML}</div>${commentInputHTML}</div><div class="product-rec"><div class="product-rec-header">🛒 김홍혁 트레이너 추천 제품</div><div class="product-list">${productHTML}</div></div></div></div>`;
+  return `<div class="meal-card">${imgPart}<div class="meal-body"><div class="meal-meta"><span class="meal-type-badge">${m.type}</span>${memberTag}<span class="meal-time">${timeStr}</span></div><div class="meal-name">${m.name||'식단 기록'}</div><div class="macro-row"><div class="macro-chip kcal"><div class="macro-num kcal">${Math.round(m.kcal)}</div><div class="macro-unit">kcal</div></div><div class="macro-chip prot"><div class="macro-num prot">${Math.round(m.prot)}g</div><div class="macro-unit">단백질</div></div><div class="macro-chip carb"><div class="macro-num carb">${Math.round(m.carb)}g</div><div class="macro-unit">탄수화물</div></div><div class="macro-chip fat"><div class="macro-num fat">${Math.round(m.fat)}g</div><div class="macro-unit">지방</div></div></div><div class="comments-area"><div id="comments_${realIdx}">${commentsHTML}</div>${commentInputHTML}</div><div class="product-rec"><div class="product-rec-header">🛒 권시환 트레이너 추천 제품</div><div class="product-list">${productHTML}</div></div></div></div>`;
 }
 
 function addComment(realIdx) {
@@ -732,7 +733,7 @@ function addComment(realIdx) {
   const text = input?.value.trim(); if(!text) return;
   if(!meals[realIdx].comments) meals[realIdx].comments = [];
   meals[realIdx].comments.push({text, isTrainer:currentRole==='trainer', trainerName:currentRole==='trainer'?currentUser.name:null, ts:Date.now()});
-  localStorage.setItem('hh_meals', JSON.stringify(meals));
+  localStorage.setItem('sh_meals', JSON.stringify(meals));
   renderFeed();
   showToast(currentRole==='trainer'?'💪 피드백이 전달됐어요!':'✅ 메모가 저장됐어요!');
 }
@@ -788,7 +789,7 @@ async function analyzeFood() {
       messages.push({role:'user', content:'"' + mealName + '" 음식의 일반적인 1인분 기준 영양소를 분석해주세요. 반드시 아래 JSON 형식으로만 응답하세요: {"kcal":숫자,"prot":숫자,"carb":숫자,"fat":숫자,"comment":"한글로 이 음식의 영양 특성과 섭취 조언 2-3문장"}'});
     }
 
-    const resp = await fetch('https://project-ch4wj.vercel.app/api/proxy', {
+    const resp = await fetch('https://project-75ovy.vercel.app/api/proxy', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({model:'claude-sonnet-4-20250514', max_tokens:800, messages})
@@ -865,7 +866,7 @@ function applyManualInput() {
 function postMeal() {
   if(!pendingAnalysis) return;
   meals.push({type:document.getElementById('mealType').value, name:document.getElementById('mealName').value||document.getElementById('mealType').value, photo:currentPhotoDataURL, memberName:currentUser.name, kcal:pendingAnalysis.kcal, prot:pendingAnalysis.prot, carb:pendingAnalysis.carb, fat:pendingAnalysis.fat, comments:[], ts:Date.now()});
-  localStorage.setItem('hh_meals', JSON.stringify(meals));
+  localStorage.setItem('sh_meals', JSON.stringify(meals));
   closeModal(); renderFeed();
   showToast('🎉 식단이 등록됐습니다!');
 }
@@ -894,7 +895,7 @@ function renderProfile() {
 
 function saveProfile() {
   profile = {name:document.getElementById('inp_name').value, age:document.getElementById('inp_age').value, height:parseFloat(document.getElementById('inp_height').value), weight:parseFloat(document.getElementById('inp_weight').value), goal_weight:parseFloat(document.getElementById('inp_goal_weight').value), goal_kcal:parseInt(document.getElementById('inp_goal_kcal').value)};
-  localStorage.setItem('hh_profile', JSON.stringify(profile));
+  localStorage.setItem('sh_profile', JSON.stringify(profile));
   renderProfile(); showToast('✅ 정보가 저장됐습니다!'); navigate('feed');
 }
 
@@ -914,7 +915,7 @@ function adminAddProduct() {
   const tag = prompt('태그')||'추천';
   const url = prompt('구매 링크'); if(!url) return;
   products.push({emoji,name,desc,tag,url});
-  localStorage.setItem('hh_products', JSON.stringify(products));
+  localStorage.setItem('sh_products', JSON.stringify(products));
   renderAdmin(); renderShop(); showToast('✅ 제품이 추가됐습니다!');
 }
 
@@ -926,14 +927,14 @@ function adminEditProduct(i) {
   const tag = prompt('태그', p.tag)||p.tag;
   const emoji = prompt('이모지', p.emoji)||p.emoji;
   products[i] = {emoji,name,desc,tag,url};
-  localStorage.setItem('hh_products', JSON.stringify(products));
+  localStorage.setItem('sh_products', JSON.stringify(products));
   renderAdmin(); renderShop(); showToast('✅ 링크가 수정됐습니다!');
 }
 
 function adminDelProduct(i) {
   if(!confirm(`"${products[i].name}" 삭제할까요?`)) return;
   products.splice(i,1);
-  localStorage.setItem('hh_products', JSON.stringify(products));
+  localStorage.setItem('sh_products', JSON.stringify(products));
   renderAdmin(); renderShop(); showToast('🗑️ 삭제됐습니다');
 }
 
@@ -941,16 +942,16 @@ function adminAddTrainer() {
   const name = prompt('트레이너 이름'); if(!name) return;
   const code = prompt('트레이너 코드 (예: SH002)')?.toUpperCase(); if(!code) return;
   if(trainers.find(t=>t.code===code)){alert('이미 사용중인 코드');return;}
-  const colors = ['#4a90d9','#90e0ef','#f9c74f','#f8ad9d','#c77dff','#ff9500'];
+  const colors = ['#4a90d9','#7ec8e3','#f9c74f','#f8ad9d','#c77dff','#ff9500'];
   trainers.push({name,code,color:colors[trainers.length%colors.length]});
-  localStorage.setItem('hh_trainers', JSON.stringify(trainers));
+  localStorage.setItem('sh_trainers', JSON.stringify(trainers));
   renderAdmin(); showToast(`✅ ${name} 트레이너 추가! 코드: ${code}`);
 }
 
 function adminDelTrainer(i) {
   if(!confirm(`"${trainers[i].name}" 삭제?`)) return;
   trainers.splice(i,1);
-  localStorage.setItem('hh_trainers', JSON.stringify(trainers));
+  localStorage.setItem('sh_trainers', JSON.stringify(trainers));
   renderAdmin(); showToast('🗑️ 삭제됐습니다');
 }
 
@@ -973,7 +974,7 @@ function renderMemberList(names) {
     const last=meals.filter(m=>m.memberName===name).sort((a,b)=>b.ts-a.ts)[0];
     const lastDate=last?new Date(last.ts).toLocaleDateString('ko-KR',{month:'short',day:'numeric'}):'기록없음';
     const unread=meals.filter(m=>m.memberName===name&&!(m.comments||[]).some(c=>c.isTrainer)).length+workouts.filter(w=>w.memberName===name&&!(w.comments||[]).some(c=>c.isTrainer)).length;
-    return `<div onclick="openMemberDetail('${name}')" style="display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--border);cursor:pointer" onmouseover="this.style.background='rgba(82,183,136,.04)'" onmouseout="this.style.background='none'">
+    return `<div onclick="openMemberDetail('${name}')" style="display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--border);cursor:pointer" onmouseover="this.style.background='rgba(74,144,217,.04)'" onmouseout="this.style.background='none'">
       <div style="width:46px;height:46px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex-shrink:0">${name[0]}</div>
       <div style="flex:1;min-width:0">
         <div style="font-size:15px;font-weight:700;margin-bottom:3px">${name} 회원님</div>
@@ -1007,7 +1008,7 @@ function renderDetailMeals(){
     return `<div class="meal-card">${imgPart}<div class="meal-body"><div class="meal-meta"><span class="meal-type-badge">${m.type}</span><span class="meal-time">${timeStr}</span></div><div class="meal-name">${m.name||'식단 기록'}</div><div class="macro-row"><div class="macro-chip kcal"><div class="macro-num kcal">${Math.round(m.kcal||0)}</div><div class="macro-unit">kcal</div></div><div class="macro-chip prot"><div class="macro-num prot">${Math.round(m.prot||0)}g</div><div class="macro-unit">단백질</div></div><div class="macro-chip carb"><div class="macro-num carb">${Math.round(m.carb||0)}g</div><div class="macro-unit">탄수화물</div></div><div class="macro-chip fat"><div class="macro-num fat">${Math.round(m.fat||0)}g</div><div class="macro-unit">지방</div></div></div><div class="comments-area"><div id="dmc_${realIdx}">${commentsHTML}</div><div class="comment-input-row"><input class="comment-input" id="dmci_${realIdx}" placeholder="식단 피드백 남기기..."><button class="comment-send" onclick="addDetailMealComment(${realIdx})">전송</button></div></div></div></div>`;
   }).join('');
 }
-function addDetailMealComment(realIdx){const input=document.getElementById('dmci_'+realIdx);const text=input?.value.trim();if(!text)return;if(!meals[realIdx].comments)meals[realIdx].comments=[];meals[realIdx].comments.push({text,isTrainer:true,trainerName:currentUser.name,ts:Date.now()});localStorage.setItem('hh_meals',JSON.stringify(meals));renderDetailMeals();showToast('💪 피드백이 전달됐어요!');}
+function addDetailMealComment(realIdx){const input=document.getElementById('dmci_'+realIdx);const text=input?.value.trim();if(!text)return;if(!meals[realIdx].comments)meals[realIdx].comments=[];meals[realIdx].comments.push({text,isTrainer:true,trainerName:currentUser.name,ts:Date.now()});localStorage.setItem('sh_meals',JSON.stringify(meals));renderDetailMeals();showToast('💪 피드백이 전달됐어요!');}
 function renderDetailWorkouts(){
   const mw=workouts.filter(w=>w.memberName===selectedMember);
   const list=document.getElementById('detailWorkoutList');
@@ -1017,12 +1018,12 @@ function renderDetailWorkouts(){
     const dateStr=new Date(w.ts).toLocaleString('ko-KR',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
     const typeEmoji=w.type==='cardio'?'🏃':'🏋️';
     const imgPart=w.photo?`<div class="meal-img"><img src="${w.photo}" alt="운동"></div>`:'';
-    const chips=w.type==='weight'?`<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px"><div style="background:rgba(82,183,136,.1);border:1px solid rgba(82,183,136,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:var(--blue-light)">${w.sets?.length||0}</div><div style="font-size:10px;color:var(--gray3)">세트</div></div><div style="background:rgba(144,224,239,.08);border:1px solid rgba(144,224,239,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#90e0ef">${(w.sets||[]).reduce((a,s)=>a+(parseInt(s.reps)||0),0)}</div><div style="font-size:10px;color:var(--gray3)">총 횟수</div></div><div style="background:rgba(199,125,255,.08);border:1px solid rgba(199,125,255,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#c77dff">${(w.sets||[]).reduce((a,s)=>a+(parseFloat(s.weight)||0)*(parseInt(s.reps)||0),0).toFixed(0)}</div><div style="font-size:10px;color:var(--gray3)">볼륨</div></div></div>`:`<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px"><div style="background:rgba(249,199,79,.08);border:1px solid rgba(249,199,79,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#f9c74f">${w.cardioTime||0}</div><div style="font-size:10px;color:var(--gray3)">분</div></div><div style="background:rgba(144,224,239,.08);border:1px solid rgba(144,224,239,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#90e0ef">${w.cardioDist||0}</div><div style="font-size:10px;color:var(--gray3)">km</div></div><div style="background:rgba(255,149,0,.08);border:1px solid rgba(255,149,0,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:var(--accent)">${w.cardioKcal||0}</div><div style="font-size:10px;color:var(--gray3)">kcal</div></div></div>`;
+    const chips=w.type==='weight'?`<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px"><div style="background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:var(--blue-light)">${w.sets?.length||0}</div><div style="font-size:10px;color:var(--gray3)">세트</div></div><div style="background:rgba(126,200,227,.08);border:1px solid rgba(126,200,227,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#7ec8e3">${(w.sets||[]).reduce((a,s)=>a+(parseInt(s.reps)||0),0)}</div><div style="font-size:10px;color:var(--gray3)">총 횟수</div></div><div style="background:rgba(199,125,255,.08);border:1px solid rgba(199,125,255,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#c77dff">${(w.sets||[]).reduce((a,s)=>a+(parseFloat(s.weight)||0)*(parseInt(s.reps)||0),0).toFixed(0)}</div><div style="font-size:10px;color:var(--gray3)">볼륨</div></div></div>`:`<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px"><div style="background:rgba(249,199,79,.08);border:1px solid rgba(249,199,79,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#f9c74f">${w.cardioTime||0}</div><div style="font-size:10px;color:var(--gray3)">분</div></div><div style="background:rgba(126,200,227,.08);border:1px solid rgba(126,200,227,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#7ec8e3">${w.cardioDist||0}</div><div style="font-size:10px;color:var(--gray3)">km</div></div><div style="background:rgba(255,149,0,.08);border:1px solid rgba(255,149,0,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:var(--accent)">${w.cardioKcal||0}</div><div style="font-size:10px;color:var(--gray3)">kcal</div></div></div>`;
     const commentsHTML=(w.comments||[]).map(c=>`<div class="comment-item"><div class="comment-avatar" style="background:${c.isTrainer?'#ff9500':'#1a4a8a'}">${c.isTrainer?'💪':selectedMember[0]}</div><div class="comment-bubble"><div class="comment-author" style="color:${c.isTrainer?'#ff9500':'var(--blue-light)'}">${c.isTrainer?c.trainerName+' 트레이너':selectedMember}</div><div class="comment-text">${c.text}</div></div></div>`).join('');
     return `<div class="meal-card">${imgPart}<div class="meal-body"><div class="meal-meta"><span class="meal-type-badge">${typeEmoji} ${w.name}</span><span class="meal-time">${dateStr}</span></div>${chips}${w.memo?`<div style="font-size:12px;color:var(--gray3);padding:8px 0;border-top:1px solid var(--border);margin-bottom:10px">📝 ${w.memo}</div>`:''}<div class="comments-area"><div id="dwc_${realIdx}">${commentsHTML}</div><div class="comment-input-row"><input class="comment-input" id="dwci_${realIdx}" placeholder="운동 피드백 남기기..."><button class="comment-send" onclick="addDetailWorkoutComment(${realIdx})">전송</button></div></div></div></div>`;
   }).join('');
 }
-function addDetailWorkoutComment(realIdx){const input=document.getElementById('dwci_'+realIdx);const text=input?.value.trim();if(!text)return;if(!workouts[realIdx].comments)workouts[realIdx].comments=[];workouts[realIdx].comments.push({text,isTrainer:true,trainerName:currentUser.name,ts:Date.now()});localStorage.setItem('hh_workouts',JSON.stringify(workouts));renderDetailWorkouts();showToast('💪 피드백이 전달됐어요!');}
+function addDetailWorkoutComment(realIdx){const input=document.getElementById('dwci_'+realIdx);const text=input?.value.trim();if(!text)return;if(!workouts[realIdx].comments)workouts[realIdx].comments=[];workouts[realIdx].comments.push({text,isTrainer:true,trainerName:currentUser.name,ts:Date.now()});localStorage.setItem('sh_workouts',JSON.stringify(workouts));renderDetailWorkouts();showToast('💪 피드백이 전달됐어요!');}
 
 function showToast(msg) {
   const t = document.getElementById('toast');
@@ -1045,7 +1046,7 @@ document.getElementById('wFileInput').addEventListener('change', function(e) {
   reader.readAsDataURL(file); this.value='';
 });
 
-let workouts=JSON.parse(localStorage.getItem('hh_workouts')||'[]');
+let workouts=JSON.parse(localStorage.getItem('sh_workouts')||'[]');
 let setCount=1, workoutTab='weight', wPhotoDataURL=null;
 
 function renderWorkout() {
@@ -1065,13 +1066,13 @@ function workoutCardHTML(w,idx,arr) {
   const typeEmoji=w.type==='cardio'?'🏃':'🏋️';
   const summaryChips=w.type==='weight'?`
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px">
-      <div style="background:rgba(82,183,136,.1);border:1px solid rgba(82,183,136,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:var(--blue-light)">${w.sets?.length||0}</div><div style="font-size:10px;color:var(--gray3)">세트</div></div>
-      <div style="background:rgba(144,224,239,.08);border:1px solid rgba(144,224,239,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#90e0ef">${(w.sets||[]).reduce((a,s)=>a+(parseInt(s.reps)||0),0)}</div><div style="font-size:10px;color:var(--gray3)">총 횟수</div></div>
+      <div style="background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:var(--blue-light)">${w.sets?.length||0}</div><div style="font-size:10px;color:var(--gray3)">세트</div></div>
+      <div style="background:rgba(126,200,227,.08);border:1px solid rgba(126,200,227,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#7ec8e3">${(w.sets||[]).reduce((a,s)=>a+(parseInt(s.reps)||0),0)}</div><div style="font-size:10px;color:var(--gray3)">총 횟수</div></div>
       <div style="background:rgba(199,125,255,.08);border:1px solid rgba(199,125,255,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#c77dff">${(w.sets||[]).reduce((a,s)=>a+(parseFloat(s.weight)||0)*(parseInt(s.reps)||0),0).toFixed(0)}</div><div style="font-size:10px;color:var(--gray3)">볼륨(kg)</div></div>
     </div>`:`
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px">
       <div style="background:rgba(249,199,79,.08);border:1px solid rgba(249,199,79,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#f9c74f">${w.cardioTime||0}</div><div style="font-size:10px;color:var(--gray3)">분</div></div>
-      <div style="background:rgba(144,224,239,.08);border:1px solid rgba(144,224,239,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#90e0ef">${w.cardioDist||0}</div><div style="font-size:10px;color:var(--gray3)">km</div></div>
+      <div style="background:rgba(126,200,227,.08);border:1px solid rgba(126,200,227,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:#7ec8e3">${w.cardioDist||0}</div><div style="font-size:10px;color:var(--gray3)">km</div></div>
       <div style="background:rgba(255,149,0,.08);border:1px solid rgba(255,149,0,.2);border-radius:10px;padding:8px;text-align:center"><div style="font-size:18px;font-weight:700;color:var(--accent)">${w.cardioKcal||0}</div><div style="font-size:10px;color:var(--gray3)">kcal</div></div>
     </div>`;
   const setsHTML=w.type==='weight'&&w.sets?.length?`<div style="background:var(--gray2);border-radius:12px;padding:8px 12px;margin-bottom:12px"><div style="display:grid;grid-template-columns:32px 1fr 1fr 1fr;gap:4px;padding:4px 0;margin-bottom:4px"><span style="font-size:10px;color:var(--gray3)">세트</span><span style="font-size:10px;color:var(--gray3)">무게</span><span style="font-size:10px;color:var(--gray3)">횟수</span><span style="font-size:10px;color:var(--gray3)">1RM</span></div>${(w.sets||[]).map((s,i)=>`<div style="display:grid;grid-template-columns:32px 1fr 1fr 1fr;gap:4px;padding:5px 0;border-top:1px solid var(--border)"><span style="font-size:11px;color:var(--gray3);text-align:center">S${i+1}</span><span style="font-size:13px;font-weight:500">${s.weight?s.weight+'kg':'—'}</span><span style="font-size:13px;color:var(--gray4)">${s.reps?s.reps+'회':'—'}</span><span style="font-size:11px;color:var(--blue-light)">${s.weight&&s.reps?Math.round(parseFloat(s.weight)*parseFloat(s.reps)*0.0333+parseFloat(s.weight))+'kg':'—'}</span></div>`).join('')}</div>`:'';
@@ -1085,7 +1086,7 @@ function addWorkoutComment(realIdx) {
   const input=document.getElementById('wcmt_'+realIdx); const text=input?.value.trim(); if(!text)return;
   if(!workouts[realIdx].comments)workouts[realIdx].comments=[];
   workouts[realIdx].comments.push({text,isTrainer:currentRole==='trainer',trainerName:currentRole==='trainer'?currentUser.name:null,ts:Date.now()});
-  localStorage.setItem('hh_workouts',JSON.stringify(workouts)); renderWorkout();
+  localStorage.setItem('sh_workouts',JSON.stringify(workouts)); renderWorkout();
   showToast(currentRole==='trainer'?'💪 피드백이 전달됐어요!':'✅ 메모가 저장됐어요!');
 }
 
@@ -1114,7 +1115,7 @@ function postWorkout() {
   let entry={type:workoutTab,memberName:currentUser.name,photo:wPhotoDataURL,memo,comments:[],ts:Date.now()};
   if(workoutTab==='weight'){const name=document.getElementById('w_name').value.trim();if(!name){showToast('운동 종목을 입력해주세요');return;}const sets=[];for(let i=1;i<=setCount;i++){const wEl=document.getElementById('s_weight_'+i);const rEl=document.getElementById('s_reps_'+i);if(wEl&&rEl)sets.push({weight:wEl.value||'',reps:rEl.value||''});}entry={...entry,name,sets};}
   else{entry={...entry,name:document.getElementById('w_cardio_type').value,cardioTime:document.getElementById('w_cardio_time').value||0,cardioDist:document.getElementById('w_cardio_dist').value||0,cardioKcal:document.getElementById('w_cardio_kcal').value||0};}
-  workouts.push(entry);localStorage.setItem('hh_workouts',JSON.stringify(workouts));
+  workouts.push(entry);localStorage.setItem('sh_workouts',JSON.stringify(workouts));
   closeWorkoutModal();renderWorkout();showToast('🏋️ 운동일지가 저장됐어요!');
 }
 
